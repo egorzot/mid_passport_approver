@@ -13,4 +13,5 @@ FROM chromedp/headless-shell:109.0.5396.2 as final
 WORKDIR /app
 COPY --from=build /src/main ./
 
+ENTRYPOINT []
 CMD ["./main"]
