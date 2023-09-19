@@ -9,3 +9,4 @@ services:
     volumes:
       - ./cptch:/app/cptch
       - ./screenshots:/app/screenshots
+      - ./.env:/app/.env

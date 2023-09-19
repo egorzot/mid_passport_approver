@@ -6,11 +6,12 @@ COPY . ./
 
 RUN go mod download
 
-RUN go build -o main .
+RUN CGO_ENABLED=0 go build -o main .
 
 FROM chromedp/headless-shell:109.0.5396.2 as final
 
 WORKDIR /app
 COPY --from=build /src/main ./
 
+ENTRYPOINT []
 CMD ["./main"]
